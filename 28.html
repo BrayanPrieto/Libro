@@ -1,0 +1,351 @@
+<html>
+ 
+<head>
+        <title>Moleskine Notebook with jQuery Booklet</title>
+         
+<link href="https://fonts.googleapis.com/css?family=Oswald" rel="stylesheet">
+    <link rel="stylesheet" href="estilos20.css">
+    
+
+ <link href="https://fonts.googleapis.com/css?family=Roboto+Condensed:300,300i,400,400i,700i" rel="stylesheet">
+ 
+ 
+		<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.4.4/jquery.min.js"></script>
+		<script src="booklet/jquery.easing.1.3.js" type="text/javascript"></script>
+		<script src="booklet/jquery.booklet.1.1.0.min.js" type="text/javascript"></script>
+
+		<link href="booklet/jquery.booklet.1.1.0.css" type="text/css" rel="stylesheet" media="screen" />
+		 
+		 
+		 <style>
+         
+              *{
+	margin:0;
+	padding:0;
+}
+body{
+		
+	
+	font-size:12px;
+	color: #333;
+    font-family: 'Oswald', sans-serif;
+}
+  table{
+	font-size:13px;
+	color: #333;
+    font-family: 'Oswald', sans-serif;
+}
+
+h3{
+font-size: 75px;
+color: white;
+font-family: Forte, Italic, sans-serif;
+}
+ 
+.booklet           {
+	width:900px;
+	height:607px;
+	position:relative;
+	margin:0 auto 10px;
+	-moz-box-shadow:0px 0px 1px #fff;
+	-webkit-box-shadow:0px 0px 1px #fff;
+	box-shadow:0px 0px 1px #fff;
+	-moz-border-radius:10px;
+	-webkit-border-radius:10px;
+	border-radius:10px;
+}
+.booklet .b-wrap-left  {
+	background:#fff url(images/left_bg.jpg) no-repeat top left;
+	-webkit-border-top-left-radius: 10px;
+	-webkit-border-bottom-left-radius: 10px;
+	-moz-border-radius-topleft:10px;
+	-moz-border-radius-bottomleft: 10px;
+	border-top-left-radius: 10px;
+	border-bottom-left-radius: 10px;
+}
+.booklet .b-wrap-right {
+	background:#efefef url(images/right_bg.jpg) no-repeat top left;
+	-webkit-border-top-right-radius: 10px;
+	-webkit-border-bottom-right-radius: 10px;
+	-moz-border-radius-topright: 10px;
+	-moz-border-radius-bottomright: 10px;
+	border-top-right-radius: 10px;
+	border-bottom-right-radius: 10px;
+}
+.booklet .b-counter {
+	bottom:10px;
+	position:absolute;
+	display:block;
+	width:90%;
+	height:20px;
+	border-top:1px solid #ddd;
+	color:#222;
+	text-align:center;
+	font-size:12px;
+	padding:5px 0 0;
+	background:transparent;
+	-moz-box-shadow:0px -1px 1px #fff;
+	-webkit-box-shadow:0px -1px 1px #fff;
+	box-shadow:0px -1px 1px #fff;
+	opacity:0.8;
+}
+.book_wrapper{
+	margin:0 auto;
+	padding-top:50px;
+	width:905px;
+	height:540px;
+	position:relative;
+	background:transparent url(images/bg.png) no-repeat 9px 27px;
+}
+.book_wrapper h1{
+	color: #002579;
+	margin:5px 5px 5px 15px;
+	font-size:30px;
+	background:transparent url(images/h1.png) no-repeat bottom left;
+	padding-bottom:7px;
+    text-transform: uppercase;
+    font-weight: normal;
+    font-family: Forte, Italic, sans-serif;
+}
+.book_wrapper h2{
+	color:purple;
+	margin:5px 5px 5px 15px;
+	font-size:25px;
+	background:transparent url(images/h1.png) no-repeat bottom left;
+	padding-bottom:7px;
+    text-transform: uppercase;
+    font-weight: normal;
+    font-family: Forte, Italic, sans-serif;
+}
+
+.book_wrapper p{
+	font-size:15px;
+	margin:5px 5px 5px 15px;
+}
+.book_wrapper a.article,
+.book_wrapper a.demo{
+	background:transparent url(images/circle.png) no-repeat 50% 0px;
+	display:block;
+	width:95px;
+	height:41px;
+	text-decoration:none;
+	outline:none;
+	font-size:16px;
+	color:#555;
+	float:left;
+	line-height:41px;
+	padding-left:47px;
+}
+.book_wrapper a.demo{
+	margin-left:50px;
+}
+.book_wrapper a.article:hover,
+.book_wrapper a.demo:hover{
+	background-position:50% -41px;
+	color:#13386a;
+}
+.book_wrapper img{
+	margin:10px 0px 5px 35px;
+	width: ;
+	padding:4px;
+	border:1px solid #ddd;
+	-moz-box-shadow:1px 1px 1px #fff;
+	-webkit-box-shadow:1px 1px 1px #fff;
+	box-shadow:1px 1px 1px #fff;
+}
+.booklet .b-wrap-right img{
+	border:1px solid #E6E3C2;
+}
+a#next_page_button,
+a#prev_page_button{
+	display:none;
+	position:absolute;
+	width:41px;
+	height:40px;
+	cursor:pointer;
+	margin-top:-20px;
+	top:50%;
+	background:transparent url(images/buttons.png) no-repeat 0px -40px;
+}
+a#prev_page_button{
+	left:-30px;
+}
+a#next_page_button{
+	right:-30px;
+	background-position:-41px -40px;
+}
+a#next_page_button:hover{
+	background-position:-41px 0px;
+}
+a#prev_page_button:hover{
+	background-position:0px 0px;
+}
+ 
+    
+    
+         </style>
+		 
+    </head>
+    <body><div align="center"><h3>SOMBRA NOCTURNA</h3></div>
+    <br><br>
+		 
+		<div class="book_wrapper">
+			<a id="next_page_button"></a>
+			<a id="prev_page_button"></a>
+			 
+			<div id="mybook" style="display:none;">
+				<div class="b-load">
+					
+
+<div>
+						
+						<h1>ÍNDICE</h1>
+						<p>
+							</p><br><div align="center"><table width="300" border="0"><tr><td><ol>
+
+						<li><a href="index.html" >PRESENTACIÓN</a></li>
+						<li><a href="bio.html" >BIOGRAFÍA DEL AUTOR</a></li>
+						<li><a href="contexto.html" >CONTEXTO GEOGRÁFICO</a></li>
+						<li><a href="momen.html" >MOMENTOS HISTÓRICOS</a></li>
+						<li><a href="perso.html" >PERSONAJES</a></li>
+						<li><a href="capi.html" >INTERPRETACIÓN POR CAPÍTULOS</a></li></br><br>
+						<div align="center"><table width="200" align="center" border="0"><tr>
+								<td><a href="1.html">1</a></td>
+						<td><a href="2.html">2</a></td>
+						<td><a href="3.html">3</a></td>
+						<td><a href="4.html">4</a></td>
+						<td><a href="5.html">5</a></td>
+						<td><a href="6.html">6</a></td>
+						<td><a href="7.html">7</a></td>
+						</tr>
+<tr>
+						<td><a href="8.html">8</a></td>
+						<td><a href="9.html">9</a></td>
+						<td><a href="10.html">10</a></td>
+						<td><a href="11.html">11</a></td>
+						<td><a href="12.html">12</a></td>
+						<td><a href="13.html">13</a></td>
+						<td><a href="14.html">14</a></td>
+						</tr>
+						<tr>
+						<td><a href="15.html">15</a></td>
+						<td><a href="16.html">16</a></td>
+						<td><a href="17.html">17</a></td>
+						<td><a href="18.html">18</a></td>
+						<td><a href="19.html">19</a></td>
+						<td><a href="20.html">20</a></td>
+						<td><a href="21.html">21</a></td>
+						</tr>
+						<tr>
+						<td><a href="22.html">22</a></td>
+						<td><a href="23.html">23</a></td>
+						<td><a href="24.html">24</a></td>
+						<td><a href="25.html">25</a></td>
+						<td><a href="26.html">26</a></td>
+						<td><a href="27.html">27</a></td>
+						<td><a href="28.html">28</a></td>
+						</tr>
+						<tr>
+						<td><a href="29.html">29</a></td>
+						<td><a href="30.html">30</a></td>
+						<td><a href="31.html">31</a></td>
+						<td><a href="32.html">32</a></td>
+						<td><a href="33.html">33</a></td>
+						<td><a href="34.html">34</a></td>
+						<td><a href="35.html">35</a></td>
+						</tr></table>
+						
+						</div>
+						<br><li><a href="glosa.html" >GLOSARIO</a></li>
+						</td></tr></table></div>
+					</div>
+					
+					
+					
+
+					
+					
+					
+<div>
+						<h1> INTERPRETACIÓN POR CAPÍTULOS </h1>
+						<br><h2>VEINTIOCHO</h2>
+						<p align="justify">Shay busca a Cala en plena clase para hablar con ella, pues la actitud de Shay era extraña ya que se 
+						veía decaído y preocupado, cuando ambos se fueron a la sala de estudiantes, Shay le confeso que se había pasado la noche
+						 leyendo y traduciendo el libro prohibido y lo que descubrió fue que la madre de Cala no había sido asesinada por un
+						  buscador sino que fue ejecutada por los custodios ya que ella había encabezado una rebelión contra los custodios pues 
+						  los guardianes no son más que esclavos y el objetivo de ella era liberarlos pero fallo ocasionando no solo su muerte
+						  sino que de todas aquellas criaturas que la ayudaron, igualmente le conto que todo lo que ella le habían enseñado sobre 
+						  la guerra era una mentira pues han sido los custodios quienes han causado la muerte de no solo buscadores sino que también
+						   guardianes y custodios 
+
+						
+					</div>
+					
+					<div>
+						
+						
+						<p align="justify"> inocentes, lo que quiere decir que hay custodios quienes manipulan a otros custodios, así mismo,
+						    hablo sobre el intentó de rebelión de la madre de Ren y sobre sus las reglas que eran más estrictas y esclavistas. 
+</p>
+<p align="justify">
+Luego de esa horrible confesión Cala empieza a llorar, Shay la intenta consolar pero entra Flynn t él se aleja con una ágil mentira, Cala y Shay entran a la clase de Química Orgánica, en ese momento Cala rechazaba la invitación de Ren para ir a cenar y le dice que se ira con Shay a la biblioteca lo que ocasiona que Ren se enoje y rápidamente se para y tumba a Shay, encima de la mesa, Shay no hace nada pues esta apunto de convertirse en lobo al igual que Ren, le deja una nota a Cala diciéndole que no estará dos días, ella triste va a la cafetería y le cuenta a su manda lo acontecido con Ren y Shay, después Shay llega con Logan para pedirle perdón a la manada asumiendo la culpa de la pelea.
+
+
+</p>
+				<p align="right"><b>AUTORA: Alejandra Mora</b></p>		
+					</div>
+					
+					<div>
+					<p align="justify"> <b>AMBIENTE:</b><br >Era un ambiente oscuro por la falta de luz, donde el peligro asechaba a las personas que no estaban atentas, este fue el caso del excursionista quien sufrió por las manos del oso, sin embargo también hubo momentos de ayuda donde Cala lo ayudo, así mismo, instantes de tensión y preocupación por que se descubriera su identidad verdadera o que alguien supiera lo que había sucedido.
+						<br><img src="images/bosque.jpg" width="250" alt="" />
+						<p><b>PALABRAS CLAVES</b></p>
+						<p align="justify"> Joven, v&iacute;ctima, ataque , curiosidad, excursión.
+</p>
+						
+					</div> 
+					
+				</div>
+			</div>
+		</div>
+        
+        <script type="text/javascript">
+			$(function() {
+				var $mybook 		= $('#mybook');
+				var $bttn_next		= $('#next_page_button');
+				var $bttn_prev		= $('#prev_page_button');
+				var $loading		= $('#loading');
+				var $mybook_images	= $mybook.find('img');
+				var cnt_images		= $mybook_images.length;
+				var loaded			= 0;
+				 
+				$mybook_images.each(function(){
+					var $img 	= $(this);
+					var source	= $img.attr('src');
+					$('<img/>').load(function(){
+						++loaded;
+						if(loaded == cnt_images){
+							$loading.hide();
+							$bttn_next.show();
+							$bttn_prev.show();
+							$mybook.show().booklet({
+								name:               null,                            //  
+								width:              800,                             //  
+								height:             500,                             //   
+								speed:              600,                             //  
+								direction:          'LTR',                           //  
+								                           //  
+								next:               $bttn_next,          			//  
+								prev:               $bttn_prev,          			//  
+								                       
+							});
+							Cufon.refresh();
+						}
+					}).attr('src',source);
+				});
+				
+			});
+        </script>
+ 
+    </body>
+ 
+</html>
