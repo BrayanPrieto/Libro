@@ -1,0 +1,396 @@
+<html>
+ 
+<head>
+        <title>Moleskine Notebook with jQuery Booklet</title>
+         
+<link href="https://fonts.googleapis.com/css?family=Oswald" rel="stylesheet">
+    <link rel="stylesheet" href="estilos20.css">
+    
+
+ <link href="https://fonts.googleapis.com/css?family=Roboto+Condensed:300,300i,400,400i,700i" rel="stylesheet">
+ 
+ 
+		<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.4.4/jquery.min.js"></script>
+		<script src="booklet/jquery.easing.1.3.js" type="text/javascript"></script>
+		<script src="booklet/jquery.booklet.1.1.0.min.js" type="text/javascript"></script>
+
+		<link href="booklet/jquery.booklet.1.1.0.css" type="text/css" rel="stylesheet" media="screen" />
+		 
+		 
+		 <style>
+         
+              *{
+	margin:0;
+	padding:0;
+}
+body{
+		
+	
+	font-size:12px;
+	color: #333;
+    font-family: 'Oswald', sans-serif;
+}
+  table{
+	font-size:13px;
+	color: #333;
+    font-family: 'Oswald', sans-serif;
+}
+
+h3{
+font-size: 75px;
+color: white;
+font-family: Forte, Italic, sans-serif;
+}
+ 
+.booklet           {
+	width:900px;
+	height:607px;
+	position:relative;
+	margin:0 auto 10px;
+	-moz-box-shadow:0px 0px 1px #fff;
+	-webkit-box-shadow:0px 0px 1px #fff;
+	box-shadow:0px 0px 1px #fff;
+	-moz-border-radius:10px;
+	-webkit-border-radius:10px;
+	border-radius:10px;
+}
+.booklet .b-wrap-left  {
+	background:#fff url(images/left_bg.jpg) no-repeat top left;
+	-webkit-border-top-left-radius: 10px;
+	-webkit-border-bottom-left-radius: 10px;
+	-moz-border-radius-topleft:10px;
+	-moz-border-radius-bottomleft: 10px;
+	border-top-left-radius: 10px;
+	border-bottom-left-radius: 10px;
+}
+.booklet .b-wrap-right {
+	background:#efefef url(images/right_bg.jpg) no-repeat top left;
+	-webkit-border-top-right-radius: 10px;
+	-webkit-border-bottom-right-radius: 10px;
+	-moz-border-radius-topright: 10px;
+	-moz-border-radius-bottomright: 10px;
+	border-top-right-radius: 10px;
+	border-bottom-right-radius: 10px;
+}
+.booklet .b-counter {
+	bottom:10px;
+	position:absolute;
+	display:block;
+	width:90%;
+	height:20px;
+	border-top:1px solid #ddd;
+	color:#222;
+	text-align:center;
+	font-size:12px;
+	padding:5px 0 0;
+	background:transparent;
+	-moz-box-shadow:0px -1px 1px #fff;
+	-webkit-box-shadow:0px -1px 1px #fff;
+	box-shadow:0px -1px 1px #fff;
+	opacity:0.8;
+}
+.book_wrapper{
+	margin:0 auto;
+	padding-top:50px;
+	width:905px;
+	height:540px;
+	position:relative;
+	background:transparent url(images/bg.png) no-repeat 9px 27px;
+}
+.book_wrapper h1{
+	color: #002579;
+	margin:5px 5px 5px 15px;
+	font-size:30px;
+	background:transparent url(images/h1.png) no-repeat bottom left;
+	padding-bottom:7px;
+    text-transform: uppercase;
+    font-weight: normal;
+    font-family: Forte, Italic, sans-serif;
+}
+.book_wrapper h2{
+	color:purple;
+	margin:5px 5px 5px 15px;
+	font-size:25px;
+	background:transparent url(images/h1.png) no-repeat bottom left;
+	padding-bottom:7px;
+    text-transform: uppercase;
+    font-weight: normal;
+    font-family: Forte, Italic, sans-serif;
+}
+
+.book_wrapper p{
+	font-size:15px;
+	margin:5px 5px 5px 15px;
+}
+.book_wrapper a.article,
+.book_wrapper a.demo{
+	background:transparent url(images/circle.png) no-repeat 50% 0px;
+	display:block;
+	width:95px;
+	height:41px;
+	text-decoration:none;
+	outline:none;
+	font-size:16px;
+	color:#555;
+	float:left;
+	line-height:41px;
+	padding-left:47px;
+}
+.book_wrapper a.demo{
+	margin-left:50px;
+}
+.book_wrapper a.article:hover,
+.book_wrapper a.demo:hover{
+	background-position:50% -41px;
+	color:#13386a;
+}
+.book_wrapper img{
+	margin:10px 0px 5px 35px;
+	width: ;
+	padding:4px;
+	border:1px solid #ddd;
+	-moz-box-shadow:1px 1px 1px #fff;
+	-webkit-box-shadow:1px 1px 1px #fff;
+	box-shadow:1px 1px 1px #fff;
+}
+.booklet .b-wrap-right img{
+	border:1px solid #E6E3C2;
+}
+a#next_page_button,
+a#prev_page_button{
+	display:none;
+	position:absolute;
+	width:41px;
+	height:40px;
+	cursor:pointer;
+	margin-top:-20px;
+	top:50%;
+	background:transparent url(images/buttons.png) no-repeat 0px -40px;
+}
+a#prev_page_button{
+	left:-30px;
+}
+a#next_page_button{
+	right:-30px;
+	background-position:-41px -40px;
+}
+a#next_page_button:hover{
+	background-position:-41px 0px;
+}
+a#prev_page_button:hover{
+	background-position:0px 0px;
+}
+ 
+    
+    
+         </style>
+		 
+    </head>
+    <body><div align="center"><h3>SOMBRA NOCTURNA</h3></div>
+    <br><br>
+		 
+		<div class="book_wrapper">
+			<a id="next_page_button"></a>
+			<a id="prev_page_button"></a>
+			 
+			<div id="mybook" style="display:none;">
+				<div class="b-load">
+					
+
+<div>
+						
+						<h1>ÍNDICE</h1>
+						<p>
+							</p><br><div align="center"><table width="300" border="0"><tr><td><ol>
+
+						<li><a href="index.html" >PRESENTACIÓN</a></li>
+						<li><a href="bio.html" >BIOGRAFÍA DEL AUTOR</a></li>
+						<li><a href="contexto.html" >CONTEXTO GEOGRÁFICO</a></li>
+						<li><a href="momen.html" >MOMENTOS HISTÓRICOS</a></li>
+						<li><a href="perso.html" >PERSONAJES</a></li>
+						<li><a href="capi.html" >INTERPRETACIÓN POR CAPÍTULOS</a></li></br><br>
+						<div align="center"><table width="200" align="center" border="0"><tr>
+								<td><a href="1.html">1</a></td>
+						<td><a href="2.html">2</a></td>
+						<td><a href="3.html">3</a></td>
+						<td><a href="4.html">4</a></td>
+						<td><a href="5.html">5</a></td>
+						<td><a href="6.html">6</a></td>
+						<td><a href="7.html">7</a></td>
+						</tr>
+<tr>
+						<td><a href="8.html">8</a></td>
+						<td><a href="9.html">9</a></td>
+						<td><a href="10.html">10</a></td>
+						<td><a href="11.html">11</a></td>
+						<td><a href="12.html">12</a></td>
+						<td><a href="13.html">13</a></td>
+						<td><a href="14.html">14</a></td>
+						</tr>
+						<tr>
+						<td><a href="15.html">15</a></td>
+						<td><a href="16.html">16</a></td>
+						<td><a href="17.html">17</a></td>
+						<td><a href="18.html">18</a></td>
+						<td><a href="19.html">19</a></td>
+						<td><a href="20.html">20</a></td>
+						<td><a href="21.html">21</a></td>
+						</tr>
+						<tr>
+						<td><a href="22.html">22</a></td>
+						<td><a href="23.html">23</a></td>
+						<td><a href="24.html">24</a></td>
+						<td><a href="25.html">25</a></td>
+						<td><a href="26.html">26</a></td>
+						<td><a href="27.html">27</a></td>
+						<td><a href="28.html">28</a></td>
+						</tr>
+						<tr>
+						<td><a href="29.html">29</a></td>
+						<td><a href="30.html">30</a></td>
+						<td><a href="31.html">31</a></td>
+						<td><a href="32.html">32</a></td>
+						<td><a href="33.html">33</a></td>
+						<td><a href="34.html">34</a></td>
+						<td><a href="35.html">35</a></td>
+						</tr></table>
+						
+						</div>
+						<br><li><a href="" >GLOSARIO</a></li>
+						</td></tr></table></div>
+					</div>
+					
+					
+					
+
+					
+					
+					
+<div>
+						<h1> INTERPRETACIÓN POR CAPÍTULOS </h1>
+						<br><h2>SIETE</h2>
+						<p align="justify">Estando en la puerta Cala no sabía si llamar un taxi e irse a casa, en ese momento se escuchó un "Hola,
+						 Cala", era Shay con una sonrisa tímida, ella lo saludo muy cordial, él le pregunto que si a menudo iba a la discoteca, a lo 
+						 que ella respondió que no, que estaba allí casi por obligación, igualmente ella le pregunto lo mismo, él contesto que no era 
+						 un chico de esas cosas, prefería leer mucha filosofía, historia y tiras cómicas. Shay la invito a un café, ella no estaba
+						  acostumbrada a que la invitaran, estaba dudosa por que el infringía las reglas, ella analizo la situación y acepto, se
+						   dirigieron a una cafetería que quedaba a dos manzanas de la discoteca, Cala caminaba demasiado rápido y él le tocaba 
+						   apurar el paso, así que decidió disminuir un poco, él le comento que le gustaba ir de excursión, al igual que no era un
+						    idiota, era un
+ 
+</p>
+
+						
+					</div>
+					
+					<div>
+						
+						
+						<p align="justify"> mochilero que pensaba que  en las montañas no debieron haber osos pardos al igual que HOMBRES LOBOS, Cala
+						     al escuchar esto le dijo "¿Crees que soy una mujer lobo?, él dio su definición de lo que creía, pero también expreso que
+						      si ella no lo hubiera salvado él estaría muerto, él dio un paso hacia ella, su mirada expresaba temor y deseo, Shay 
+						      le dijo que parecía una chica normal, observo el corsé que llevaba Cala, ella sentía que podía acariciar otras partes 
+						      de su cuerpo, por eso se soltó y gruño, él observo que le salían colmillos cuando se enfadaba y que estaba seguro que
+						       era una mujer lobo, Cala sintió compasión y dijo "Quiero que me conozcas, Shay, que me conozcan de verdad", terminando
+						        diciéndoles que no estaba loco. En seguida le susurro que, si era una mujer lobo, ella dijo que era una guardiana,
+						         pero antes de decirle que significaba debía saber si le había contado a alguien acerca de lo ocurrido en la montaña,
+						          él lo negó, ella le hizo jurar que lo que le iba a contar a nadie se lo podía decir, y que se lo contaría cuando 
+						          estuvieran en el café. <p align="justify"> Observo que dos hombres los estaban persiguiendo, ella rodeo los hombros 
+						          de Shay con el brazo y lo atrajo hacía ella. Le dijo a Shay que los estaban persiguiendo, ella lo abrazó y recorrió
+						           sus labios 
+					</div>
+					
+					<div>
+						
+						
+					<table><tr><td> <img src="images/hh.jpg" width="300" alt="" /></td></tr><tr><td>Tomado de: Pulido,(2019). diariofemenino.com</td></tr> </table>	</div>
+					
+					<div>
+						
+						
+						<p align="justify"> con la mirada, le dijo que quería que se fuera corriendo a la 
+				 discoteca y le dijera al hombre de 
+						           seguridad que viniera porque había un problema, él tenía el móvil y le dijo que haría una llamada de emergencia,
+						            ella le mostro los caninos, pero él le dijo que lo haría si le prometía versen al día siguiente en la mañana, 
+						            ella se negó pero al final le dijo que el domingo en la mañana, lo empujó para que se fuera y así fue, pero 
+						            antes él le lanzo una sonrisa antes de correr. Cala escucho a sus espaldas el primer hombre, este recibió un
+						             puño en el estómago de manos de ella, los olió y se dio cuenta que eran buscadores. Se convirtió en loba y 
+						             le desgarro la garganta al primer buscador, esta que dejo de latir su corazón, el segundo tenía cara de miedo
+						              intento huir, pero ella se le lanzo y lo tumbo, llegaron dos Bane, y le dijeron que, si era posible que 
+						              estuviera vivo, que Efron lo quería así, ella dijo que sí.<p align="justify">  Llego el hombre de seguridad
+						               y le pregunto si estaba herida, ella respondió que no es nada, le había golpeado con un arma, se fueron, 
+						               pasaron por diferentes pasillos hasta llegar a una puerta que daba a la suite privada de Efron, entro a la 
+						               habitación, y poco después Ren, a quien ya le habían dicho lo sucedido con el buscador, él se preocupó por
+						                ella, se preguntaron por Shay,
+					</div>
+					
+					<div>
+						
+						
+						<p align="justify">  él ya se había ido con Bosque para la casa, Cala deseaba verlo para asegurarse
+						                 que estaba a salvo. Efron le ordeno quitarse la chaqueta para examinar el moretón del hombro, ella 
+						                 necesitaba sangre por lo que Ren se ofreció a dársela, él se arremango la camisa, le paso su brazo se volteó 
+						                 y sintió la sangre en su lengua y garganta, era caliente y dulce, con un toque a humo, la herida desapareció,
+						                  una pareja perfecta alguien murmuro, desgarraron un papel y se la pusieron en el brazo. Logan realizo el 
+						                  proceso de revisión del buscador, el hombre abrió los ojos revisando su entorno al final se enfocó en Cala,
+						                   Ren se convirtió en lobo y le dijo al buscador que iban a buscar una forma de acabar con él, después 
+						                   regreso a la forma humana y se fue junto con Cala. Ren la arrastro a la puerta y los invitaron a seguir 
+						                   disfrutando de la discoteca, ellos echaron a correr al segundo piso, allí estaban los miembros de las dos
+						                    manadas disfrutando, cuando iba a ir con ellos, Ren la detuvo y le pregunto que, si estaba bien, ella 
+						                    respondió que sí, después él sintió que ella lo detestaba, pero la razón era que ella estaba siguiendo 
+						                    las reglas, él le dio la espalda y se perdió entre la multitud.</p></div>
+					
+					<div>
+<p align="justify"><b>AMBIENTE:</b><br>Su ambiente fue de peligro principalmente, en donde los buscadores iban detrás
+						 de ellos, pero especialmente en Shay, al  mismo tiempo de acción cuando se enfrentaron ellos contra Cala, y de ayuda 
+						 con el préstamo de sangre que hizo Ren a Cala para que su morado desapareciera.  	
+						 
+						 <br><p><b>PALABRAS CLAVES</b></p>
+						<p align="justify"> Café, buscadores, herida, ayuda, lucha
+					</div>
+					
+				</div>
+			</div>
+		</div>
+        
+        <script type="text/javascript">
+			$(function() {
+				var $mybook 		= $('#mybook');
+				var $bttn_next		= $('#next_page_button');
+				var $bttn_prev		= $('#prev_page_button');
+				var $loading		= $('#loading');
+				var $mybook_images	= $mybook.find('img');
+				var cnt_images		= $mybook_images.length;
+				var loaded			= 0;
+				 
+				$mybook_images.each(function(){
+					var $img 	= $(this);
+					var source	= $img.attr('src');
+					$('<img/>').load(function(){
+						++loaded;
+						if(loaded == cnt_images){
+							$loading.hide();
+							$bttn_next.show();
+							$bttn_prev.show();
+							$mybook.show().booklet({
+								name:               null,                            //  
+								width:              800,                             //  
+								height:             500,                             //   
+								speed:              600,                             //  
+								direction:          'LTR',                           //  
+								                           //  
+								next:               $bttn_next,          			//  
+								prev:               $bttn_prev,          			//  
+								                       
+							});
+							Cufon.refresh();
+						}
+					}).attr('src',source);
+				});
+				
+			});
+        </script>
+ 
+    </body>
+ 
+</html>
